@@ -1,18 +1,35 @@
-const line1 = document.querySelector(".line1");
-const line2 = document.querySelector(".line2");
+const title = document.querySelector(".title");
+const subtitle = document.querySelector(".subtitle");
+const line = document.querySelector(".line");
 
-window.onload = () => {
+function animate(){
 
-    setTimeout(() => {
+    title.classList.remove("showTitle");
+    subtitle.classList.remove("showSubtitle");
+    line.classList.remove("showLine");
 
-        line1.classList.add("show");
+    void title.offsetWidth;
 
-    }, 500);
+    title.classList.add("showTitle");
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
-        line2.classList.add("show");
+        subtitle.classList.add("showSubtitle");
 
-    }, 1800);
+    },300);
+
+    setTimeout(()=>{
+
+        line.classList.add("showLine");
+
+    },700);
+
+}
+
+window.onload=()=>{
+
+    animate();
+
+    setInterval(animate,3000);
 
 };
