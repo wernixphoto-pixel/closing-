@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Closing</title>
+<title>Closing YouTube</title>
 
 <style>
 
@@ -22,44 +21,42 @@ body{
 
 body{
 
-    overflow:hidden;
-
     display:flex;
     justify-content:center;
     align-items:center;
+
+    overflow:hidden;
 
     font-family:"Segoe UI",Arial,sans-serif;
 
     background:
     radial-gradient(circle at center,
-    #111 0%,
-    #050505 45%,
+    #121212 0%,
+    #060606 45%,
     #000 100%);
 
 }
 
-/* Background glow sangat halus */
+/* Background Glow */
 
 body::before{
 
     content:"";
 
     position:fixed;
-
     inset:0;
 
     background:
     radial-gradient(circle,
-    rgba(255,255,255,.03) 0%,
-    rgba(255,255,255,.015) 35%,
-    transparent 75%);
+    rgba(255,255,255,.03),
+    transparent 70%);
 
     animation:
-    backgroundPulse 10s ease-in-out infinite;
+    backgroundPulse 8s ease-in-out infinite;
 
 }
 
-/* =========================== */
+/* ========================= */
 
 .container{
 
@@ -70,13 +67,26 @@ body::before{
 
 }
 
-/* =========================== */
+/* ========================= */
 
-.title{
+.title,
+.subtitle{
 
     position:relative;
 
+    overflow:hidden;
+
+    display:inline-block;
+
     color:#fff;
+
+    white-space:nowrap;
+
+}
+
+/* ========================= */
+
+.title{
 
     font-size:48px;
 
@@ -86,52 +96,17 @@ body::before{
 
     opacity:0;
 
-    text-shadow:
-    0 0 8px rgba(255,255,255,.10);
-
     animation:
     titleIn 1s ease forwards,
-    glow 6s ease-in-out infinite 1s;
+    glowTitle 5s ease-in-out infinite 1s;
 
 }
-
-/* Cahaya tipis */
-
-.title::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:-30%;
-
-    left:-160%;
-
-    width:40%;
-
-    height:170%;
-
-    background:
-    linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.45),
-    transparent);
-
-    transform:skewX(-25deg);
-
-    animation:
-    sweep 9s linear infinite 4s;
-
-}
-
-/* =========================== */
 
 .subtitle{
 
-    margin-top:16px;
+    display:block;
 
-    color:#fff;
+    margin-top:16px;
 
     font-size:16px;
 
@@ -141,16 +116,257 @@ body::before{
 
     opacity:0;
 
-    text-shadow:
-    0 0 5px rgba(255,255,255,.08);
-
     animation:
     subtitleIn 1s ease forwards .3s,
-    glowSmall 6s ease-in-out infinite 1.3s;
+    glowSubtitle 5s ease-in-out infinite 1.3s;
 
 }
 
-/* =========================== */
+/* ========================= */
+/* SHIMMER TITLE */
+/* ========================= */
+
+.title::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40%;
+
+    left:-170%;
+
+    width:28%;
+
+    height:180%;
+
+    transform:skewX(-25deg);
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,0),
+        rgba(255,255,255,.25),
+        rgba(255,255,255,.95),
+        rgba(255,255,255,.25),
+        rgba(255,255,255,0)
+    );
+
+    filter:blur(3px);
+
+    animation:
+    shimmerTitle 6s linear infinite;
+
+}
+
+/* ========================= */
+/* SHIMMER SUBTITLE */
+/* ========================= */
+
+.subtitle::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40%;
+
+    left:-170%;
+
+    width:28%;
+
+    height:180%;
+
+    transform:skewX(-25deg);
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,0),
+        rgba(255,255,255,.20),
+        rgba(255,255,255,.90),
+        rgba(255,255,255,.20),
+        rgba(255,255,255,0)
+    );
+
+    filter:blur(3px);
+
+    animation:
+    shimmerSubtitle 6s linear infinite;
+
+    animation-delay:.35s;
+
+}
+
+/* ========================= */
+
+@keyframes shimmerTitle{
+
+    0%{
+
+        left:-170%;
+        opacity:0;
+
+    }
+
+    3%{
+
+        opacity:1;
+
+    }
+
+    11%{
+
+        left:170%;
+        opacity:0;
+
+    }
+
+    100%{
+
+        left:170%;
+        opacity:0;
+
+    }
+
+}
+
+@keyframes shimmerSubtitle{
+
+    0%{
+
+        left:-170%;
+        opacity:0;
+
+    }
+
+    3%{
+
+        opacity:1;
+
+    }
+
+    11%{
+
+        left:170%;
+        opacity:0;
+
+    }
+
+    100%{
+
+        left:170%;
+        opacity:0;
+
+    }
+
+}
+
+/* ========================= */
+
+@keyframes glowTitle{
+
+    0%{
+
+        text-shadow:
+        0 0 5px rgba(255,255,255,.08);
+
+    }
+
+    50%{
+
+        text-shadow:
+        0 0 16px rgba(255,255,255,.28),
+        0 0 35px rgba(255,255,255,.10);
+
+    }
+
+    100%{
+
+        text-shadow:
+        0 0 5px rgba(255,255,255,.08);
+
+    }
+
+}
+
+@keyframes glowSubtitle{
+
+    0%{
+
+        text-shadow:
+        0 0 3px rgba(255,255,255,.05);
+
+    }
+
+    50%{
+
+        text-shadow:
+        0 0 10px rgba(255,255,255,.20);
+
+    }
+
+    100%{
+
+        text-shadow:
+        0 0 3px rgba(255,255,255,.05);
+
+    }
+
+}
+
+/* ========================= */
+
+@keyframes breathing{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.01);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ========================= */
+
+@keyframes backgroundPulse{
+
+    0%{
+
+        opacity:.4;
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:.75;
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        opacity:.4;
+        transform:scale(1);
+
+    }
+
+}
+
+/* ========================= */
 
 @keyframes titleIn{
 
@@ -159,7 +375,7 @@ body::before{
         opacity:0;
 
         transform:
-        translateY(25px);
+        translateY(20px);
 
         letter-spacing:20px;
 
@@ -185,9 +401,9 @@ body::before{
         opacity:0;
 
         transform:
-        translateY(18px);
+        translateY(15px);
 
-        letter-spacing:14px;
+        letter-spacing:12px;
 
     }
 
@@ -199,146 +415,6 @@ body::before{
         translateY(0);
 
         letter-spacing:6px;
-
-    }
-
-}
-
-/* =========================== */
-
-@keyframes glow{
-
-    0%{
-
-        text-shadow:
-        0 0 6px rgba(255,255,255,.08);
-
-    }
-
-    50%{
-
-        text-shadow:
-        0 0 14px rgba(255,255,255,.28),
-        0 0 28px rgba(255,255,255,.10);
-
-    }
-
-    100%{
-
-        text-shadow:
-        0 0 6px rgba(255,255,255,.08);
-
-    }
-
-}
-
-@keyframes glowSmall{
-
-    0%{
-
-        text-shadow:
-        0 0 4px rgba(255,255,255,.05);
-
-    }
-
-    50%{
-
-        text-shadow:
-        0 0 10px rgba(255,255,255,.18);
-
-    }
-
-    100%{
-
-        text-shadow:
-        0 0 4px rgba(255,255,255,.05);
-
-    }
-
-}
-
-/* =========================== */
-
-@keyframes breathing{
-
-    0%{
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.01);
-
-    }
-
-    100%{
-
-        transform:scale(1);
-
-    }
-
-}
-
-/* =========================== */
-
-@keyframes backgroundPulse{
-
-    0%{
-
-        opacity:.4;
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        opacity:.75;
-
-        transform:scale(1.05);
-
-    }
-
-    100%{
-
-        opacity:.4;
-
-        transform:scale(1);
-
-    }
-
-}
-
-/* =========================== */
-
-@keyframes sweep{
-
-    0%{
-
-        left:-160%;
-        opacity:0;
-
-    }
-
-    8%{
-
-        opacity:.7;
-
-    }
-
-    22%{
-
-        left:160%;
-        opacity:0;
-
-    }
-
-    100%{
-
-        left:160%;
-        opacity:0;
 
     }
 
