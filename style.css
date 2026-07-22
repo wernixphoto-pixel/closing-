@@ -1,86 +1,207 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+}
+
+body{
+
+    background:#000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+}
+
+/* Container */
+
+.container{
+
+    text-align:center;
+
+}
+
+/* ========================= */
+
 .title{
-    color:#fff;
-    font-size:clamp(52px,6vw,110px);
+
+    color:white;
+
+    font-size:clamp(60px,6vw,110px);
+
     font-weight:700;
+
     letter-spacing:12px;
 
-    animation:titleLoop 3s infinite;
+    opacity:0;
+
+    animation:titleAnim 3s infinite;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,.18);
+
 }
 
 .subtitle{
+
     margin-top:20px;
 
-    color:#fff;
-    font-size:clamp(20px,2vw,36px);
-    font-weight:300;
+    color:white;
+
+    font-size:clamp(22px,2vw,38px);
+
     letter-spacing:14px;
 
-    animation:subtitleLoop 3s infinite;
+    opacity:0;
+
+    animation:subtitleAnim 3s infinite;
+
 }
 
 .line{
+
     width:280px;
+
     height:2px;
-    margin:28px auto 0;
 
-    background:#fff;
+    margin:30px auto 0;
 
-    animation:lineLoop 3s infinite;
-}
+    background:white;
 
-@keyframes titleLoop{
+    transform:scaleX(0);
 
-    0%{
-        opacity:0;
-        transform:translateY(15px) scale(.98);
-    }
+    transform-origin:center;
 
-    15%{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-
-    100%{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
+    animation:lineAnim 3s infinite;
 
 }
 
-@keyframes subtitleLoop{
+/* ========================= */
 
-    0%,15%{
-        opacity:0;
-        transform:translateY(15px);
-    }
+@keyframes titleAnim{
 
-    30%{
-        opacity:1;
-        transform:translateY(0);
-    }
+0%{
 
-    100%{
-        opacity:1;
-        transform:translateY(0);
-    }
+opacity:0;
+transform:translateY(25px);
 
 }
 
-@keyframes lineLoop{
+15%{
 
-    0%,30%{
-        width:0;
-        opacity:0;
-    }
+opacity:1;
+transform:translateY(0);
 
-    45%{
-        width:280px;
-        opacity:1;
-    }
+}
 
-    100%{
-        width:280px;
-        opacity:1;
-    }
+100%{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes subtitleAnim{
+
+0%,18%{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+35%{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+100%{
+
+opacity:1;
+
+}
+
+}
+
+@keyframes lineAnim{
+
+0%,35%{
+
+transform:scaleX(0);
+
+opacity:0;
+
+}
+
+55%{
+
+transform:scaleX(1);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scaleX(1);
+
+opacity:1;
+
+}
+
+}
+
+/* Glow lembut */
+
+.title{
+
+animation:
+titleAnim 3s infinite,
+glow 4s ease-in-out infinite;
+
+}
+
+@keyframes glow{
+
+0%{
+
+text-shadow:
+0 0 8px rgba(255,255,255,.10);
+
+}
+
+50%{
+
+text-shadow:
+0 0 18px rgba(255,255,255,.35);
+
+}
+
+100%{
+
+text-shadow:
+0 0 8px rgba(255,255,255,.10);
+
+}
 
 }
