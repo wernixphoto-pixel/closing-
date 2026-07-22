@@ -3,13 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Closing YouTube Elegan</title>
+
+<title>Closing</title>
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
 
 *{
     margin:0;
@@ -23,10 +20,6 @@ body{
     height:100%;
 }
 
-/* =====================================================
-   BODY
-===================================================== */
-
 body{
 
     overflow:hidden;
@@ -39,54 +32,45 @@ body{
 
     background:
     radial-gradient(circle at center,
-    #151515 0%,
-    #070707 45%,
-    #000000 100%);
+    #111 0%,
+    #050505 45%,
+    #000 100%);
 
 }
 
-/* =====================================================
-   BACKGROUND GLOW
-===================================================== */
+/* Background glow sangat halus */
 
 body::before{
 
     content:"";
 
     position:fixed;
+
     inset:0;
 
     background:
     radial-gradient(circle,
-    rgba(255,255,255,.06) 0%,
-    rgba(255,255,255,.02) 30%,
-    transparent 70%);
+    rgba(255,255,255,.03) 0%,
+    rgba(255,255,255,.015) 35%,
+    transparent 75%);
 
     animation:
-    backgroundPulse 8s ease-in-out infinite;
-
-    pointer-events:none;
+    backgroundPulse 10s ease-in-out infinite;
 
 }
 
-/* =====================================================
-   CONTAINER
-===================================================== */
+/* =========================== */
 
 .container{
-
-    position:relative;
 
     text-align:center;
 
     animation:
-    breathing 7s ease-in-out infinite;
+    breathing 8s ease-in-out infinite;
 
 }
 
-/* =====================================================
-   TITLE
-===================================================== */
+/* =========================== */
 
 .title{
 
@@ -94,21 +78,24 @@ body::before{
 
     color:#fff;
 
-    font-size:clamp(70px,6vw,120px);
+    font-size:48px;
 
-    font-weight:700;
+    font-weight:600;
 
-    letter-spacing:14px;
+    letter-spacing:8px;
 
     opacity:0;
 
+    text-shadow:
+    0 0 8px rgba(255,255,255,.10);
+
     animation:
     titleIn 1s ease forwards,
-    glow 5s ease-in-out infinite 1s;
+    glow 6s ease-in-out infinite 1s;
 
 }
 
-/* Light Sweep */
+/* Cahaya tipis */
 
 .title::after{
 
@@ -116,56 +103,54 @@ body::before{
 
     position:absolute;
 
-    top:-20%;
+    top:-30%;
 
-    left:-130%;
+    left:-160%;
 
-    width:45%;
+    width:40%;
 
-    height:140%;
+    height:170%;
 
     background:
     linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.7),
-        transparent
-    );
+    90deg,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent);
 
     transform:skewX(-25deg);
 
     animation:
-    sweep 8s linear infinite 3s;
+    sweep 9s linear infinite 4s;
 
 }
 
-/* =====================================================
-   SUBTITLE
-===================================================== */
+/* =========================== */
 
 .subtitle{
 
-    margin-top:24px;
+    margin-top:16px;
 
     color:#fff;
 
-    font-size:clamp(24px,2vw,40px);
+    font-size:16px;
 
     font-weight:300;
 
-    letter-spacing:18px;
+    letter-spacing:6px;
 
     opacity:0;
 
+    text-shadow:
+    0 0 5px rgba(255,255,255,.08);
+
     animation:
-    subtitleIn 1s ease forwards .35s,
-    glowSmall 5s ease-in-out infinite 1.3s;
+    subtitleIn 1s ease forwards .3s,
+    glowSmall 6s ease-in-out infinite 1.3s;
 
 }
 
-/* =====================================================
-   TITLE MASUK
-===================================================== */
+/* =========================== */
 
 @keyframes titleIn{
 
@@ -174,41 +159,9 @@ body::before{
         opacity:0;
 
         transform:
-        translateY(35px)
-        scale(.96);
-
-        letter-spacing:40px;
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0)
-        scale(1);
-
-        letter-spacing:14px;
-
-    }
-
-}
-
-/* =====================================================
-   SUBTITLE MASUK
-===================================================== */
-
-@keyframes subtitleIn{
-
-    from{
-
-        opacity:0;
-
-        transform:
         translateY(25px);
 
-        letter-spacing:28px;
+        letter-spacing:20px;
 
     }
 
@@ -219,88 +172,92 @@ body::before{
         transform:
         translateY(0);
 
-        letter-spacing:18px;
+        letter-spacing:8px;
 
     }
 
 }
 
-/* =====================================================
-   GLOW BESAR
-===================================================== */
+@keyframes subtitleIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(18px);
+
+        letter-spacing:14px;
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+        letter-spacing:6px;
+
+    }
+
+}
+
+/* =========================== */
 
 @keyframes glow{
 
     0%{
 
         text-shadow:
-
-        0 0 10px rgba(255,255,255,.15),
-        0 0 25px rgba(255,255,255,.10);
+        0 0 6px rgba(255,255,255,.08);
 
     }
 
     50%{
 
         text-shadow:
-
-        0 0 18px rgba(255,255,255,.75),
-
-        0 0 40px rgba(255,255,255,.45),
-
-        0 0 70px rgba(255,255,255,.25);
+        0 0 14px rgba(255,255,255,.28),
+        0 0 28px rgba(255,255,255,.10);
 
     }
 
     100%{
 
         text-shadow:
-
-        0 0 10px rgba(255,255,255,.15),
-
-        0 0 25px rgba(255,255,255,.10);
+        0 0 6px rgba(255,255,255,.08);
 
     }
 
 }
-
-/* =====================================================
-   GLOW SUBTITLE
-===================================================== */
 
 @keyframes glowSmall{
 
     0%{
 
         text-shadow:
-
-        0 0 6px rgba(255,255,255,.08);
+        0 0 4px rgba(255,255,255,.05);
 
     }
 
     50%{
 
         text-shadow:
-
-        0 0 16px rgba(255,255,255,.45),
-
-        0 0 35px rgba(255,255,255,.18);
+        0 0 10px rgba(255,255,255,.18);
 
     }
 
     100%{
 
         text-shadow:
-
-        0 0 6px rgba(255,255,255,.08);
+        0 0 4px rgba(255,255,255,.05);
 
     }
 
 }
 
-/* =====================================================
-   BREATHING
-===================================================== */
+/* =========================== */
 
 @keyframes breathing{
 
@@ -312,7 +269,7 @@ body::before{
 
     50%{
 
-        transform:scale(1.025);
+        transform:scale(1.01);
 
     }
 
@@ -324,15 +281,13 @@ body::before{
 
 }
 
-/* =====================================================
-   BACKGROUND PULSE
-===================================================== */
+/* =========================== */
 
 @keyframes backgroundPulse{
 
     0%{
 
-        opacity:.35;
+        opacity:.4;
 
         transform:scale(1);
 
@@ -340,15 +295,15 @@ body::before{
 
     50%{
 
-        opacity:.8;
+        opacity:.75;
 
-        transform:scale(1.08);
+        transform:scale(1.05);
 
     }
 
     100%{
 
-        opacity:.35;
+        opacity:.4;
 
         transform:scale(1);
 
@@ -356,38 +311,33 @@ body::before{
 
 }
 
-/* =====================================================
-   LIGHT SWEEP
-===================================================== */
+/* =========================== */
 
 @keyframes sweep{
 
     0%{
 
-        left:-140%;
-
+        left:-160%;
         opacity:0;
 
     }
 
     8%{
 
-        opacity:.9;
+        opacity:.7;
 
     }
 
-    25%{
+    22%{
 
-        left:140%;
-
+        left:160%;
         opacity:0;
 
     }
 
     100%{
 
-        left:140%;
-
+        left:160%;
         opacity:0;
 
     }
