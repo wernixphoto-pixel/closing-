@@ -20,13 +20,10 @@ body{
 }
 
 body{
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     overflow:hidden;
-
     font-family:"Segoe UI",Arial,sans-serif;
 
     background:
@@ -36,12 +33,11 @@ body{
     #000 100%);
 }
 
-/* Background Glow */
+/* Background */
 
 body::before{
 
     content:"";
-
     position:fixed;
     inset:0;
 
@@ -50,23 +46,21 @@ body::before{
     rgba(255,255,255,.03),
     transparent 70%);
 
-    animation:
-    backgroundPulse 8s ease-in-out infinite;
+    animation:backgroundPulse 8s ease-in-out infinite;
 
 }
 
-/* ========================= */
+/* ====================== */
 
 .container{
 
     text-align:center;
 
-    animation:
-    breathing 8s ease-in-out infinite;
+    animation:breathing 8s ease-in-out infinite;
 
 }
 
-/* ========================= */
+/* ====================== */
 
 .title,
 .subtitle{
@@ -82,8 +76,6 @@ body::before{
     white-space:nowrap;
 
 }
-
-/* ========================= */
 
 .title{
 
@@ -121,9 +113,9 @@ body::before{
 
 }
 
-/* ========================= */
-/* SHIMMER TITLE */
-/* ========================= */
+/* ====================== */
+/* SHIMMER */
+/* ====================== */
 
 .title::after{
 
@@ -131,11 +123,13 @@ body::before{
 
     position:absolute;
 
-    top:-40%;
-    left:-170%;
+    top:-50%;
 
-    width:28%;
-    height:180%;
+    left:-180%;
+
+    width:30%;
+
+    height:200%;
 
     transform:skewX(-25deg);
 
@@ -143,22 +137,17 @@ body::before{
     linear-gradient(
         90deg,
         rgba(255,255,255,0),
-        rgba(255,255,255,.25),
+        rgba(255,255,255,.20),
         rgba(255,255,255,.95),
-        rgba(255,255,255,.25),
+        rgba(255,255,255,.20),
         rgba(255,255,255,0)
     );
 
-    filter:blur(3px);
+    filter:blur(4px);
 
-    animation:
-    shimmerTitle 8s linear infinite;
+    animation:shimmerTitle 12s linear infinite;
 
 }
-
-/* ========================= */
-/* SHIMMER SUBTITLE */
-/* ========================= */
 
 .subtitle::after{
 
@@ -166,11 +155,13 @@ body::before{
 
     position:absolute;
 
-    top:-40%;
-    left:-170%;
+    top:-50%;
 
-    width:28%;
-    height:180%;
+    left:-180%;
+
+    width:30%;
+
+    height:200%;
 
     transform:skewX(-25deg);
 
@@ -178,43 +169,42 @@ body::before{
     linear-gradient(
         90deg,
         rgba(255,255,255,0),
-        rgba(255,255,255,.20),
-        rgba(255,255,255,.90),
-        rgba(255,255,255,.20),
+        rgba(255,255,255,.18),
+        rgba(255,255,255,.85),
+        rgba(255,255,255,.18),
         rgba(255,255,255,0)
     );
 
-    filter:blur(3px);
+    filter:blur(4px);
 
-    animation:
-    shimmerSubtitle 8s linear infinite;
+    animation:shimmerSubtitle 12s linear infinite;
 
-    animation-delay:.45s;
+    animation-delay:.6s;
 
 }
 
-/* ========================= */
-/* SHIMMER LEBIH LAMBAT */
-/* ========================= */
+/* ====================== */
+/* SWEEP LEBIH LAMBAT */
+/* ====================== */
 
 @keyframes shimmerTitle{
 
     0%{
-        left:-170%;
+        left:-180%;
         opacity:0;
     }
 
-    4%{
+    5%{
         opacity:1;
     }
 
-    18%{
-        left:170%;
+    26%{
+        left:180%;
         opacity:0;
     }
 
     100%{
-        left:170%;
+        left:180%;
         opacity:0;
     }
 
@@ -223,44 +213,42 @@ body::before{
 @keyframes shimmerSubtitle{
 
     0%{
-        left:-170%;
+        left:-180%;
         opacity:0;
     }
 
-    4%{
+    5%{
         opacity:1;
     }
 
-    18%{
-        left:170%;
+    26%{
+        left:180%;
         opacity:0;
     }
 
     100%{
-        left:170%;
+        left:180%;
         opacity:0;
     }
 
 }
 
-/* ========================= */
+/* ====================== */
 
 @keyframes glowTitle{
 
     0%{
-        text-shadow:
-        0 0 5px rgba(255,255,255,.08);
+        text-shadow:0 0 5px rgba(255,255,255,.08);
     }
 
     50%{
         text-shadow:
-        0 0 16px rgba(255,255,255,.28),
+        0 0 18px rgba(255,255,255,.28),
         0 0 35px rgba(255,255,255,.10);
     }
 
     100%{
-        text-shadow:
-        0 0 5px rgba(255,255,255,.08);
+        text-shadow:0 0 5px rgba(255,255,255,.08);
     }
 
 }
@@ -268,23 +256,20 @@ body::before{
 @keyframes glowSubtitle{
 
     0%{
-        text-shadow:
-        0 0 3px rgba(255,255,255,.05);
+        text-shadow:0 0 3px rgba(255,255,255,.05);
     }
 
     50%{
-        text-shadow:
-        0 0 10px rgba(255,255,255,.20);
+        text-shadow:0 0 10px rgba(255,255,255,.18);
     }
 
     100%{
-        text-shadow:
-        0 0 3px rgba(255,255,255,.05);
+        text-shadow:0 0 3px rgba(255,255,255,.05);
     }
 
 }
 
-/* ========================= */
+/* ====================== */
 
 @keyframes breathing{
 
@@ -302,8 +287,6 @@ body::before{
 
 }
 
-/* ========================= */
-
 @keyframes backgroundPulse{
 
     0%{
@@ -312,7 +295,7 @@ body::before{
     }
 
     50%{
-        opacity:.75;
+        opacity:.7;
         transform:scale(1.05);
     }
 
@@ -323,7 +306,7 @@ body::before{
 
 }
 
-/* ========================= */
+/* ====================== */
 
 @keyframes titleIn{
 
