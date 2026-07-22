@@ -15,9 +15,7 @@ body{
 }
 
 body{
-
     background:#000;
-
     overflow:hidden;
 
     display:flex;
@@ -28,7 +26,6 @@ body{
     "Segoe UI",
     Arial,
     sans-serif;
-
 }
 
 /* =======================================
@@ -61,7 +58,12 @@ body{
 
     opacity:0;
 
-    animation:titleIn .9s ease forwards;
+    text-shadow:
+        0 0 6px rgba(255,255,255,.08);
+
+    animation:
+        titleIn .9s ease forwards,
+        glow 6s ease-in-out infinite 1s;
 
 }
 
@@ -83,7 +85,12 @@ body{
 
     opacity:0;
 
-    animation:subtitleIn .9s ease forwards .35s;
+    text-shadow:
+        0 0 5px rgba(255,255,255,.08);
+
+    animation:
+        subtitleIn .9s ease forwards .35s,
+        glow 6s ease-in-out infinite 1.35s;
 
 }
 
@@ -94,15 +101,11 @@ body{
 @keyframes containerIn{
 
     from{
-
         opacity:0;
-
     }
 
     to{
-
         opacity:1;
-
     }
 
 }
@@ -152,7 +155,6 @@ body{
     0%{
 
         transform:scale(1);
-
         filter:brightness(100%);
 
     }
@@ -160,7 +162,6 @@ body{
     50%{
 
         transform:scale(1.01);
-
         filter:brightness(108%);
 
     }
@@ -168,7 +169,6 @@ body{
     100%{
 
         transform:scale(1);
-
         filter:brightness(100%);
 
     }
@@ -178,28 +178,6 @@ body{
 /* =======================================
    GLOW HALUS
 ======================================= */
-
-.title{
-
-    text-shadow:
-        0 0 8px rgba(255,255,255,.12);
-
-    animation:
-        titleIn .9s ease forwards,
-        glow 6s ease-in-out infinite 1s;
-
-}
-
-.subtitle{
-
-    text-shadow:
-        0 0 5px rgba(255,255,255,.08);
-
-    animation:
-        subtitleIn .9s ease forwards .35s,
-        glow 6s ease-in-out infinite 1.35s;
-
-}
 
 @keyframes glow{
 
