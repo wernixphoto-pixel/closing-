@@ -1,165 +1,86 @@
-.container{
-    position:relative;
-    z-index:10;
-    text-align:center;
-}
-
-.title,
-.subtitle,
-.line{
-
-    opacity:0;
-
-}
-
 .title{
-
     color:#fff;
-
     font-size:clamp(52px,6vw,110px);
-
     font-weight:700;
-
     letter-spacing:12px;
 
-    text-shadow:
-        0 0 10px rgba(255,255,255,.15);
-
-    animation:
-        breathe 4s ease-in-out infinite;
-
+    animation:titleLoop 3s infinite;
 }
 
 .subtitle{
-
-    margin-top:18px;
+    margin-top:20px;
 
     color:#fff;
-
     font-size:clamp(20px,2vw,36px);
-
     font-weight:300;
-
     letter-spacing:14px;
 
+    animation:subtitleLoop 3s infinite;
 }
 
 .line{
-
-    width:0;
-
+    width:280px;
     height:2px;
-
     margin:28px auto 0;
 
-    background:white;
+    background:#fff;
 
-    box-shadow:0 0 10px rgba(255,255,255,.3);
-
+    animation:lineLoop 3s infinite;
 }
 
-.showTitle{
-
-    animation:titleIn .6s ease forwards,
-              breathe 4s ease-in-out infinite;
-
-}
-
-.showSubtitle{
-
-    animation:subtitleIn .6s ease forwards;
-
-}
-
-.showLine{
-
-    animation:lineGrow .8s ease forwards;
-
-}
-
-@keyframes titleIn{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(15px)
-        scale(.98);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0)
-        scale(1);
-
-    }
-
-}
-
-@keyframes subtitleIn{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(15px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-@keyframes lineGrow{
-
-    from{
-
-        width:0;
-        opacity:0;
-
-    }
-
-    to{
-
-        width:280px;
-        opacity:1;
-
-    }
-
-}
-
-@keyframes breathe{
+@keyframes titleLoop{
 
     0%{
-
-        text-shadow:
-        0 0 8px rgba(255,255,255,.15);
-
+        opacity:0;
+        transform:translateY(15px) scale(.98);
     }
 
-    50%{
-
-        text-shadow:
-        0 0 18px rgba(255,255,255,.28);
-
+    15%{
+        opacity:1;
+        transform:translateY(0) scale(1);
     }
 
     100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
 
-        text-shadow:
-        0 0 8px rgba(255,255,255,.15);
+}
 
+@keyframes subtitleLoop{
+
+    0%,15%{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    30%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes lineLoop{
+
+    0%,30%{
+        width:0;
+        opacity:0;
+    }
+
+    45%{
+        width:280px;
+        opacity:1;
+    }
+
+    100%{
+        width:280px;
+        opacity:1;
     }
 
 }
