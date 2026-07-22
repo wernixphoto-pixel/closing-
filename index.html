@@ -3,16 +3,413 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Closing YouTube</title>
+<title>Closing YouTube Elegan</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:"Segoe UI",Arial,sans-serif;
+
+    background:
+    radial-gradient(circle at center,
+    #151515 0%,
+    #070707 45%,
+    #000000 100%);
+
+}
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.06) 0%,
+    rgba(255,255,255,.02) 30%,
+    transparent 70%);
+
+    animation:
+    backgroundPulse 8s ease-in-out infinite;
+
+    pointer-events:none;
+
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    position:relative;
+
+    text-align:center;
+
+    animation:
+    breathing 7s ease-in-out infinite;
+
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.title{
+
+    position:relative;
+
+    color:#fff;
+
+    font-size:clamp(70px,6vw,120px);
+
+    font-weight:700;
+
+    letter-spacing:14px;
+
+    opacity:0;
+
+    animation:
+    titleIn 1s ease forwards,
+    glow 5s ease-in-out infinite 1s;
+
+}
+
+/* Light Sweep */
+
+.title::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-20%;
+
+    left:-130%;
+
+    width:45%;
+
+    height:140%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.7),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:
+    sweep 8s linear infinite 3s;
+
+}
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.subtitle{
+
+    margin-top:24px;
+
+    color:#fff;
+
+    font-size:clamp(24px,2vw,40px);
+
+    font-weight:300;
+
+    letter-spacing:18px;
+
+    opacity:0;
+
+    animation:
+    subtitleIn 1s ease forwards .35s,
+    glowSmall 5s ease-in-out infinite 1.3s;
+
+}
+
+/* =====================================================
+   TITLE MASUK
+===================================================== */
+
+@keyframes titleIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(35px)
+        scale(.96);
+
+        letter-spacing:40px;
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+        letter-spacing:14px;
+
+    }
+
+}
+
+/* =====================================================
+   SUBTITLE MASUK
+===================================================== */
+
+@keyframes subtitleIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(25px);
+
+        letter-spacing:28px;
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+        letter-spacing:18px;
+
+    }
+
+}
+
+/* =====================================================
+   GLOW BESAR
+===================================================== */
+
+@keyframes glow{
+
+    0%{
+
+        text-shadow:
+
+        0 0 10px rgba(255,255,255,.15),
+        0 0 25px rgba(255,255,255,.10);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+        0 0 18px rgba(255,255,255,.75),
+
+        0 0 40px rgba(255,255,255,.45),
+
+        0 0 70px rgba(255,255,255,.25);
+
+    }
+
+    100%{
+
+        text-shadow:
+
+        0 0 10px rgba(255,255,255,.15),
+
+        0 0 25px rgba(255,255,255,.10);
+
+    }
+
+}
+
+/* =====================================================
+   GLOW SUBTITLE
+===================================================== */
+
+@keyframes glowSmall{
+
+    0%{
+
+        text-shadow:
+
+        0 0 6px rgba(255,255,255,.08);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+        0 0 16px rgba(255,255,255,.45),
+
+        0 0 35px rgba(255,255,255,.18);
+
+    }
+
+    100%{
+
+        text-shadow:
+
+        0 0 6px rgba(255,255,255,.08);
+
+    }
+
+}
+
+/* =====================================================
+   BREATHING
+===================================================== */
+
+@keyframes breathing{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.025);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* =====================================================
+   BACKGROUND PULSE
+===================================================== */
+
+@keyframes backgroundPulse{
+
+    0%{
+
+        opacity:.35;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:.8;
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        opacity:.35;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* =====================================================
+   LIGHT SWEEP
+===================================================== */
+
+@keyframes sweep{
+
+    0%{
+
+        left:-140%;
+
+        opacity:0;
+
+    }
+
+    8%{
+
+        opacity:.9;
+
+    }
+
+    25%{
+
+        left:140%;
+
+        opacity:0;
+
+    }
+
+    100%{
+
+        left:140%;
+
+        opacity:0;
+
+    }
+
+}
+
+</style>
 
 </head>
+
 <body>
 
 <div class="container">
-    <h1 class="title">TERIMA KASIH</h1>
-    <div class="subtitle">SUDAH MENONTON</div>
+
+    <div class="title">
+        TERIMA KASIH
+    </div>
+
+    <div class="subtitle">
+        SUDAH MENONTON
+    </div>
+
 </div>
 
 </body>
